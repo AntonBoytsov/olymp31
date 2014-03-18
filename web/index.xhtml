@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Hello from Facelets
+        <br />
+        <h:link outcome="welcomePrimefaces" value="Страница приветствия Primefaces" />
+    </h:body>
+</html> -->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <head>
+        <link rel='stylesheet' href='resources/css/excite-bike/jquery-ui-1.10.4.custom.min.css' />
+        <link rel='stylesheet' href='resources/js/fullcalendar/fullcalendar.css' />
+        <link rel='stylesheet' media='print' href='resources/js/fullcalendar/fullcalendar.print.css' />
+        <script src="resources/js/jquery-1.10.2.js"></script>
+        <script src="resources/js/jquery-ui-1.10.4.custom.js"></script>
+        <script src="resources/js/jquery-ui-1.10.4.custom.min.js"></script>
+        <script src="resources/js/fullcalendar/fullcalendar.js"></script>
+        <script>
+            $(document).ready(function() {
+
+                    var date = new Date();
+                    var d = date.getDate();
+                    var m = date.getMonth();
+                    var y = date.getFullYear();
+
+                    var calendar = $('#calendar').fullCalendar({
+                            header: {
+                                    left: 'prev,next today',
+                                    center: 'title',
+                                    right: 'month,agendaWeek,agendaDay'
+                            },
+                            firstDay: 1,
+                            theme: true,
+                            aspectRatio: 1.5,
+                            selectable: true,
+                            selectHelper: true,
+                            select: function(start, end, allDay) {
+                                    var title = prompt('Event Title:');
+                                    if (title) {
+                                            calendar.fullCalendar('renderEvent',
+                                                    {
+                                                            title: title,
+                                                            start: start,
+                                                            end: end,
+                                                            allDay: allDay
+                                                    },
+                                                    true // make the event "stick"
+                                            );
+                                    }
+                                    calendar.fullCalendar('unselect');
+                            },
+                            editable: true,
+                            events: [
+                                    {
+                                            title: 'All Day Event',
+                                            start: new Date(y, m, 1)
+                                    },
+                                    {
+                                            title: 'Long Event',
+                                            start: new Date(y, m, d-5),
+                                            end: new Date(y, m, d-2)
+                                    },
+                                    {
+                                            id: 999,
+                                            title: 'Repeating Event',
+                                            start: new Date(y, m, d-3, 16, 0),
+                                            allDay: false
+                                    },
+                                    {
+                                            id: 999,
+                                            title: 'Repeating Event',
+                                            start: new Date(y, m, d+4, 16, 0),
+                                            allDay: false
+                                    },
+                                    {
+                                            title: 'Meeting',
+                                            start: new Date(y, m, d, 10, 30),
+                                            allDay: false
+                                    },
+                                    {
+                                            title: 'Lunch',
+                                            start: new Date(y, m, d, 12, 0),
+                                            end: new Date(y, m, d, 14, 0),
+                                            allDay: false
+                                    },
+                                    {
+                                            title: 'Birthday Party',
+                                            start: new Date(y, m, d+1, 19, 0),
+                                            end: new Date(y, m, d+1, 22, 30),
+                                            allDay: false
+                                    },
+                                    {
+                                            title: 'Click for Google',
+                                            start: new Date(y, m, 28),
+                                            end: new Date(y, m, 29),
+                                            url: 'http://google.com/'
+                                    }
+                            ]
+                    });
+
+            });
+
+        </script>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>ok</title>        
+        <link rel="stylesheet" type="text/css" href="resources/css/menu.css" />
+    </head>
+    <body>
+        <div id="menu">
+            <ul>
+                <li><a href="#">Календарь</a></li>
+                <li><a href="#">Теория</a></li>
+                <li><a href="#">Разборы задач</a></li>
+                <li><h:link outcome="form" value="Добавить" /></li>
+                <li><a href="#">О сайте</a></li>
+            </ul>
+        </div>
+        <div id="calendar"></div>
+    </body>
+</html>
+
+
+

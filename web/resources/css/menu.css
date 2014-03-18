@@ -1,0 +1,33 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 09.03.2014, 16:06:17
+    Author     : anton
+*/
+@font-face {
+    font-family: 'Minaeff Ect';
+    src: url(../fonts/Minaeff_Ect/MinaeffEct-Regular.ttf);
+}
+
+#menu ul li {display: inline;}
+#menu ul {
+        margin: 0; padding: 0; float: left; font: bold 25px 'Minaeff Ect'; width: 100%; 
+        border: none; 
+        background-color: #1484e6;
+        margin-bottom: 7px;
+}
+#menu ul li a {
+    float: left; padding: 0.5em 1em; 
+    text-decoration: none; border: none; 
+    color: white;
+}
+#menu ul li a:link {color: white;}
+#menu ul li a:visited {color: white;}
+#menu ul li a:hover {color: whitesmoke; background: transparent url(excite-bike/images/ui-bg_diagonals-thick_20_e69700_40x40.png) repeat center center;}
+body {margin: 0; padding: 0;}
+#calendar {margin-left: 1em; margin-right: 1em; clear: left;}
+.fc-header-title h2 {color: #e69700;}
+.fc-event {font-family: Arial;}
