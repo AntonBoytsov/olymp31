@@ -7,6 +7,9 @@
     <property name="hibernate.connection.url">jdbc:derby://localhost:1527/olymp</property>
     <property name="hibernate.connection.username">trainer</property>
     <property name="hibernate.connection.password">ururu</property>
+    <property name="hibernate.show_sql">true</property>
+    <property name="hibernate.current_session_context_class">thread</property>
+    <property name="hibernate.query.factory_class">org.hibernate.hql.classic.ClassicQueryTranslatorFactory</property>
     <mapping resource="database/Lesson.hbm.xml"/>
   </session-factory>
 </hibernate-configuration>

@@ -17,14 +17,14 @@ and open the template in the editor.
             Название:
             <h:inputText value="#{lessonController.name}" />
             <br/>
-            Время начала:
+            Дата начала:
             <h:inputText id="sdate" value="#{lessonController.sdate}">
-                <f:convertDateTime pattern="dd-MM-yyyy hh:mm" />
+                <f:convertDateTime pattern="dd-MM-yyyy HH:mm" />
             </h:inputText>
             <br/>
-            Время окончания:
+            Дата окончания:
             <h:inputText id="fdate" value="#{lessonController.fdate}">
-                <f:convertDateTime pattern="dd-MM-yyyy hh:mm" />
+                <f:convertDateTime pattern="dd-MM-yyyy HH:mm" />
             </h:inputText>
             <br/>
             <h:commandButton value="Отправить" action="#{lessonController.submit()}" />

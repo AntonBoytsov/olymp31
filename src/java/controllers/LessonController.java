@@ -4,9 +4,13 @@
  * and open the template in the editor.
  */
 
-package database;
+package controllers;
 
+import database.Lesson;
+import helpers.LessonHelper;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
@@ -24,6 +28,8 @@ public class LessonController {
     private LessonHelper helper;
     private String name;
     private Date sdate, fdate;
+    private List<Lesson> lessonList;
+    private Lesson current;
     
     public LessonController() {
         
@@ -37,6 +43,10 @@ public class LessonController {
         lesson.setSdate(getSdate());
         lesson.setFdate(getFdate());
         helper.addLesson(lesson);
+    }
+    
+    public void loadLessonList() {
+        helper.loadLessonList();
     }
     
     public void submit() {
@@ -84,6 +94,12 @@ public class LessonController {
     public void setFdate(Date fdate) {
         this.fdate = fdate;
     }
-    
+
+    /**
+     * @return the lessonList
+     */
+    public List<Lesson> getLessonList() {
+        return lessonList;
+    }
     
 }
